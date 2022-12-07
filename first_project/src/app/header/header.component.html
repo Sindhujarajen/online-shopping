@@ -1,0 +1,48 @@
+
+<div>
+
+    <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <img
+        src="https://th.bing.com/th/id/OIP.V6kuC5hd8-iSJr27sUb_wAAAAA?w=120&h=150&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+        alt="" width="50px">
+    <h1 appHighlight>Muraai Information Technology</h1>
+
+    <div>
+    <mat-form-field class="example-full-width">
+        <input type="search" matInput placeholder="search" #search>
+        </mat-form-field>
+         <button  (click)="searchTool(search.value)" class="less">search</button> 
+    </div>
+
+     <button id="ss" (click)="addDetails()" appHighlight>Add</button>  
+     <button mat-icon-button [matMenuTriggerFor]="menu" class="circle" appHighlight>{{fName}}{{lName}}</button>
+     <mat-menu #menu="matMenu"> 
+        <mat-card >
+            <mat-card-header class="card">
+                <mat-divider> </mat-divider>
+                <mat-card-title>{{a}}</mat-card-title>
+            </mat-card-header>
+            <mat-divider> </mat-divider>
+            <mat-card-content>{{email}}</mat-card-content>
+       
+        </mat-card>
+    </mat-menu> 
+</div>
+
+
+<mat-sidenav-container>
+    <mat-sidenav #snav mode="side" >
+        <mat-nav-list class="mybutton" >
+            <a mat-list-item routerLink="/mat-table" (click)="snav.toggle()" >mat-table</a>
+            <a mat-list-item routerLink="/goshopping" (click)="snav.toggle()">goshopping</a>
+            <a mat-list-item routerLink="/wishlist" (click)="snav.toggle()" >wishlist</a>
+            <a mat-list-item routerLink="/" (click)="snav.toggle()" (click)="logout()">logout</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

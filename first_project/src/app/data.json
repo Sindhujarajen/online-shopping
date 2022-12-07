@@ -1,0 +1,96 @@
+{
+  "Details": [
+    {
+      "no": "10",
+      "itemName": "phone",
+      "cost": 50000,
+      "shippingAddress": "SR Layout",
+      "expectedDelivery": "22-11-2022",
+      "id": "10",
+      "selected": false
+    },
+    {
+      "no": "11",
+      "cost": 30,
+      "itemName": "soap",
+      "shippingAddress": "madurai",
+      "expectedDelivery": "15-11-22",
+      "id": "11",
+      "selected": false
+    },
+    {
+      "no": "12",
+      "cost": 1000,
+      "itemName": "lehenga",
+      "shippingAddress": "madurai",
+      "expectedDelivery": "12-12-22",
+      "id": "12",
+      "selected": false
+    },
+    {
+      "no": "7",
+      "itemName": "laptop",
+      "cost": "50000",
+      "shippingAddress": "chennai",
+      "expectedDelivery": "25-11-2022",
+      "id": "7",
+      "selected": true
+    },
+    {
+      "no": "55",
+      "cost": "100",
+      "itemName": "jfkf",
+      "shippingAddress": "jjbfk",
+      "expectedDelivery": "15-11-22",
+      "id": "55",
+      "selected": true
+    },
+    {
+      "no": "1",
+      "cost": "1000",
+      "itemName": "shoes",
+      "shippingAddress": "madurai",
+      "expectedDelivery": "5-12-22",
+      "id": "1",
+      "selected": true
+    }
+  ],
+  "Shopping": [
+    {
+      "Title": "shoes",
+      "cost": 2000,
+      "image": "https://th.bing.com/th/id/OIP.vfvjT0FAy5jcqBaNtAhNhAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "description": "White Tennies"
+    },
+    {
+      "Title": "jeans",
+      "cost": 1000,
+      "image": "https://th.bing.com/th/id/OIP.QUKgKWR8N8TEzXZDIHpg0QHaLH?w=195&h=292&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "description": "Women super high raise skinny jeans"
+    },
+    {
+      "Title": "lehenga",
+      "cost": 10000,
+      "image": "https://th.bing.com/th/id/OIP.RLBLWyahJwUvtWYPsZj32AHaKt?w=195&h=283&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "description": "perfume etiquette"
+    },
+    {
+      "Title": "perfume",
+      "cost": 999,
+      "image": "https://th.bing.com/th/id/OIP.vfvjT0FAy5jcqBaNtAhNhAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+      "description": "perfume etiquette"
+    },
+    {
+      "Title": "watch",
+      "cost": 3000,
+      "image": "https://th.bing.com/th/id/OIP.lHfNQ4X4wti5VM-W0jtiawHaE7?w=301&h=200&c=7&r=0&o=5&dpr=1.5&pid=1.7 ",
+      "description": "Rolex Day Date 40MM Ref & secret"
+    },
+    {
+      "Title": "T-Shirt",
+      "cost": 300,
+      "image": "https://th.bing.com/th/id/OIP.DSjZPk9uy01_f2ox4Q5QPgHaHa?w=217&h=218&c=7&r=0&o=5&dpr=1.5&pid=1.7 ",
+      "description": "Nike Logo T-shirt in Black"
+    }
+  ]
+}

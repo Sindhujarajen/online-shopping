@@ -1,0 +1,33 @@
+/* .loosu{
+    display:flex;
+    background-color: aqua;
+    height: 90px;
+}
+.circle{
+    margin-left :750px;
+    height: 50px;
+    width: 50px;
+     border: solid;
+    border-radius: 50%;
+    background-color: darksalmon;
+   
+}
+.ok{
+    width: 250px;
+} */
+.row {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+img {
+    height: 350px;
+    width: 350px;
+}
+
+.example-header-image{
+    background-image: url('https://th.bing.com/th/id/OIP.Mkt9dsJ7YC247XmG3gRB9gHaH_?w=175&h=188&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+    background-size: cover;
+}

@@ -1,0 +1,103 @@
+<h2>Online Shopping</h2>
+<mat-stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" (ngSubmit)="form1()" #formone="ngForm">
+      <ng-template matStepLabel>Fill out your no</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>no</mat-label>
+        <input matInput placeholder="no" formControlName="no" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+        <!-- <button type="submit" mat-button>submit</button> -->
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out your itemName & Cost & Adress">
+    <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formtwo="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label>itemName</mat-label>
+        <input matInput formControlName="itemName" placeholder="itemName" required>
+
+      </mat-form-field>
+      <!-- <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div> -->
+      <!-- </form>
+      </mat-step> -->
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Cost</mat-label>
+          <input matInput formControlName="cost" placeholder="cost" required>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>shippingAddress</mat-label>
+          <input matInput formControlName="shippingAddress" placeholder="shippingAddress" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <!-- <button type="submit" mat-button>submit</button> -->
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" label="Fill out your Country & State">
+    <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()" #formthree="ngForm">
+      
+        <mat-form-field appearance="fill">
+          <mat-label>country</mat-label>
+          <mat-select [formControl]="country" name="country">
+            <mat-option *ngFor="let country of countries" [value]="country">
+              {{country.name}}
+            </mat-option>
+          </mat-select>
+          <!-- <input matInput formControlName="fourthCtrl" placeholder="shippingAddress" required> -->
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>State</mat-label>
+          <mat-select [formControl]="state" name="state">
+            <mat-option *ngFor="let state of states" [value]="state">
+              {{state.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <!-- <button type="submit" mat-button>submit</button> -->
+        </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="fourthFormGroup" label="Fill out your expectedDelivery">
+    <form [formGroup]="fourthFormGroup" (ngSubmit)="form4()" #formfour="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label>expectedDelivery</mat-label>
+        <input matInput formControlName="expectedDelivery" placeholder="expectedDelivery" requiredtype>
+      </mat-form-field>
+
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+        <!-- <button type="submit" mat-button>submit</button> -->
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <button type="button" mat-button
+      (click)="formone.ngSubmit.emit();formtwo.ngSubmit.emit();formthree.ngSubmit.emit();formfour.ngSubmit.emit()">submit</button>
+  </mat-step>
+
+</mat-stepper>

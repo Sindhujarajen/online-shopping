@@ -1,0 +1,50 @@
+<div class="mm">
+    <h4>Online Shopping Registration</h4>
+    <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="no">No:</mat-label>
+                <input matInput type="text" name="no" class="form-control" formControlName="no">
+            </mat-form-field>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="itemName">ItemName: </mat-label><br>
+                <input matInput type="text" name="itemName" class="form-control" formControlName="itemName">
+            </mat-form-field>
+        </div>
+        <div
+            *ngIf="formdata.controls['itemName']?.invalid && (formdata.controls['itemName']?.dirty || formdata.controls['itemName'])">
+            <div *ngIf="formdata.controls['itemName']?.errors.required">ItemName is required
+            </div>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="cost"> Cost: </mat-label><br>
+                <input matInput type="number" name="cost" class="form-control" formControlName="cost">
+            </mat-form-field>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="shippingAddress">Shipping Address: </mat-label><br>
+                <input matInput type="text" name="shippingAddress" class="form-control"
+                    formControlName="shippingAddress">
+            </mat-form-field>
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <mat-form-field appearance="outline">
+                <mat-label for="expectedDelivery">Expected Delivery: </mat-label><br>
+                <input matInput type="text" name="expectedDelivery" class="form-control"
+                    formControlName="expectedDelivery">
+            </mat-form-field>
+        </div>
+          <button type="submit" *ngIf="!data?.showButton" (click)="openSnackbar()">Submit</button>
+        <button *ngIf="data?.showButton" (click)="update(formdata.value)" (click)="closeSnackbar()">update</button> 
+
+        
+    </form>
+</div>

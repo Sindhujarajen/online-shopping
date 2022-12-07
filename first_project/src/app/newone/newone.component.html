@@ -1,0 +1,23 @@
+<!-- <app-header></app-header> -->
+<div class="hey">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Vegetable</mat-card-title>
+            <mat-card-subtitle>Tomato</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image
+            src=" https://th.bing.com/th/id/R.f75444a8652496f93f3333fb5f4246b1?rik=11OsZG0H2ox63g&riu=http%3a%2f%2fatlantablackstar.com%2fwp-content%2fuploads%2f2013%2f10%2ftomato.jpg&ehk=wyAfcT9AiKLEBoeZfIlRvXjtWUfRTpwRZ0oYdmBHsW4%3d&risl=&pid=ImgRaw&r=0"
+            alt="Photo of a tomato">
+    </mat-card>
+    <!-- <h5 class="hi"> Order Details: <br><br>
+    no: {{add.no}} <br>
+    itemName: {{add.itemName}} <br>
+    cost: {{add.cost}} <br>
+    shippingAddress: {{add.shippingAddress}} <br>
+    expectedDelivery: {{add.expectedDelivery}} <br>
+</h5> -->
+    <app-navbar [add]="add" (updateEditDetails)="edit ( add)" (updateDeleteDetails)="delete ( add.id)">
+    </app-navbar>
+</div>
+<!-- to fetch the parameter -->
