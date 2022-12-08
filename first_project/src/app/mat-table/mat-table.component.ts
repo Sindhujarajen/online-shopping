@@ -14,16 +14,6 @@ export interface PeriodicElement {
   shippingAddress: string;
   expectedDelivery: string;
 }
-
-// const EXAMPLE_DATA: PeriodicElement[] = [
-//   {no: 1, itemName: 'agfd',cost : 20,shippingAddress:'HSR Layout', expectedDelivery:'12-09-2022'},
-//   {no: 2, itemName: 'Helium', cost : 60, shippingAddress:'HSR Layout', expectedDelivery:'12-09-2022'},
-//   {no: 3, itemName: 'Helium', cost : 80, shippingAddress:'HSR Layout', expectedDelivery:'12-09-2022'}
-
-// ];
-
-
-
 @Component({
   selector: 'app-mat-table',
   templateUrl: './mat-table.component.html',
@@ -47,35 +37,27 @@ export class MatTableComponent implements OnInit {
     this.router.navigate(['/new', id])
   }
 
-  // editRow() {
-  //   this.service.createDetails({}).subscribe(d => {
-  //     console.log('-------', d);
-
-  //   })
-  //   this.dialog.open(ReactiveFormComponent)
-  // }
-
-  editRow(sfjs: any) {
+  editRow(code: any) {
     const dialogRef = this.dialog.open(ReactiveFormComponent, {
       data: {
-        ...sfjs, showButton: true
+        ...code, showButton: true
       }
     })
-    dialogRef.afterClosed().subscribe((x: any) => {
-      console.log('Dialog result', `${x}`);
+    dialogRef.afterClosed().subscribe((code: any) => {
+      // console.log('Dialog result', `${x}`);
 
     })
   }
 
   deleteRow(id: any) {
-    this.service.deleteDetails(id).subscribe(x => {
-      console.log('-----', x);
+    this.service.deleteDetails(id).subscribe(code => {
+      // console.log('-----', x);
 
     })
   }
   favo(data: any) {
-    this.service.updatefavo(data).subscribe(m => {
-      console.log('-----', m);
+    this.service.updatefavo(data).subscribe(code => {
+      // console.log('-----', m);
       window.location.reload()
     })
   }

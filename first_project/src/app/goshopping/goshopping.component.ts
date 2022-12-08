@@ -8,28 +8,16 @@ import { SampleserviceService } from '../sampleservice.service';
   styleUrls: ['./goshopping.component.css']
 })
 export class GoshoppingComponent implements OnInit {
-  a: any
+
   cards: any;
-  router: any;
+
   // dataSource: any;
   constructor(private service: SampleserviceService) { }
   ngOnInit() {
-    this.service.getShopping().subscribe((o: any) => {
-      this.cards = o
-      console.log(this.cards);
+    this.service.getShopping().subscribe((code: any) => {
+      this.cards = code
+      // console.log(this.cards);
     })
   }
-  // logout(){
-  //   this.router.navigate(['/login'])
-  //   localStorage.clear()
-  // }
-  // login(){
-  //   this.router.navigate(['/mat-table'])
-  // }
-  // goto(){
-  //   this.router.navigate(['/goshopping'])
-  // }
-  // wish(){
-  //   this.router.navigate(['/wishlist'])
-  // }
+
 }

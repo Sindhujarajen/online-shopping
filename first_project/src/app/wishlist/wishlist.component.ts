@@ -18,20 +18,20 @@ export interface PeriodicElement {
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css']
 })
-export class WishlistComponent implements OnInit{
+export class WishlistComponent implements OnInit {
   displayedColumns: string[] = ['no', 'itemName', 'cost', 'shippingAddress', 'expectedDelivery'];
   dataSource: Observable<any> = of([{}]);
   router: any;
 
-  constructor(private service:SampleserviceService){}
+  constructor(private service: SampleserviceService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.service.getDetails()
     this.dataSource = this.service.dataEvent$
-    .pipe(map((x:any) => {
-      console.log('===x====', x)
-      return (x.filter((a:any) => a.selected))
-    }))
+      .pipe(map((code: any) => {
+        // console.log('===x====', x)
+        return (code.filter((all: any) => all.selected))
+      }))
   }
-   
+
 }

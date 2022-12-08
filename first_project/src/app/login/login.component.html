@@ -1,22 +1,5 @@
-<!-- <app-header></app-header>
-<mat-drawer-container class="example-container" autosize>
-
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-            <button  (click)="login()">order</button><br><br>
-            <button  (click)="goto()">gotoshopping</button><br><br>
-            <button  (click)="wish()">wishlist</button><br><br>
-            <button  (click)="logout()">logout</button>
-            </mat-drawer>
-     
-
-    <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-            menu
-        </button>
-        </div> -->
-
-    <div>
-        <h3>Login Form</h3><br>
+<div>
+    <h3>Login Form</h3><br>
         <form [formGroup]="formdata" (ngSubmit)="loginPage(formdata.value)">
             <div> 
                 <mat-form-field appearance="fill"> 
@@ -30,17 +13,5 @@
             </div>
             <button mat-storke-button type="submit">submit</button>
         </form>
-    </div>
+</div>
 
-<!-- </mat-drawer-container>  -->
-
-
-<!-- <div>
-        <form action="">
-            <label for="username">UserName </label><br>
-            <input type="text"><br><br>
-            <label for="password">Password </label><br>
-            <input type="password"><br><br>
-            <button>submit</button>
-        </form>
-    </div> -->
