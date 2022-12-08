@@ -33,8 +33,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { GoshoppingComponent } from './goshopping/goshopping.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import {MatListModule} from '@angular/material/list';
-import {HighlightDirective } from './highlight.directive';
-import {MatExpansionModule} from '@angular/material/expansion'
+import { HighlightDirective } from './highlight.directive';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
