@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-// import { SampleserviceService } from '../sampleservice.service';
 import { ReactiveFormComponent } from '../reactive-form/reactive-form.component';
 import { SampleserviceService } from '../sampleservice.service';
 import { StepperComponent } from '../stepper/stepper.component';
@@ -26,27 +25,12 @@ export class HeaderComponent  implements OnInit{
     this.lName=((this.a.split(' ',2))[1])[0]
   }
   
-  //ngOnInit():void {
-    // this.dataSource = this.service.getDetails();
-  //}
-  // editRow() {
-  //   this.service.createDetails({
-  //     id: 17,
-  //     no: 8,
-  //     itemName: 'doll',
-  //     cost: 40,
-  //     shippingAddress: 'HSR Layout',
-  //     expectedDelivery: "12-11-2022"
-  //   }
-//     ).subscribe(d => {
-//       console.log('-------', d)
-//     })
-//   }
+  
 addDetails(){
   const dialogRef=this.dialog.open(StepperComponent)
 
   dialogRef.afterClosed().subscribe(result =>{
-    console.log('Dialog result',`${result}`);
+    // console.log('Dialog result',`${result}`);
     
   })
 
@@ -66,7 +50,7 @@ wish(){
   this.router.navigate(['/wishlist'])
 }
 searchTool(val:any){
-  console.log('------',val);
+  // console.log('------',val);
   this.service.searchItem(val)
   
 }

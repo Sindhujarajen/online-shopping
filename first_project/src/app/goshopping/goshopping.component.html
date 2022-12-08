@@ -1,54 +1,17 @@
-<!-- <div class="loosu"> <img
-        src="https://scontent-maa2-1.xx.fbcdn.net/v/t39.30808-6/300370908_381200520855992_4234857438231408920_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=rY5AitDKxBgAX8rsC9G&_nc_ht=scontent-maa2-1.xx&oh=00_AfBLpLy5Km8EtMl9UdHfv-6bXUG7loOHQbFYkpWJKsOISw&oe=637FE73A"
-        alt="" width="50px">
-    <h3>Muraai Information Technology</h3><br>
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="circle">{{fName}}{{lName}}</button>
-    <mat-menu #menu="matMenu">
-        <mat-card class="ok">
-            <mat-card-header class="card">
-                <mat-divider> </mat-divider>
-                <mat-card-title>{{a}}</mat-card-title>
-            </mat-card-header>
-            <mat-divider> </mat-divider>
-            <mat-card-content>{{email}}</mat-card-content>
-
-        </mat-card>
-    </mat-menu>
-</div> -->
-<!-- <app-header></app-header>
-
-<mat-drawer-container class="example-contaner" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <button  (click)="login()">order</button><br><br>
-        <button  (click)="goto()">gotoshopping</button><br><br>
-        <button  (click)="wish()">wishlist</button><br><br>
-        <button  (click)="logout()">logout</button>
-        </mat-drawer>
- 
-
-<div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-        menu
-    </button>
-    </div>
-
-        </mat-drawer-container> -->
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
 <div class="row row-cols-1  row row-cols-3 ">
-<div class="col-mb-4" *ngFor="let card of cards"> 
-    <mat-card class="example-card"> 
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{card.Title}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="{{card.image}}"> 
-         <mat-card-content>
-            <p>
-           cost:{{card.cost}} <br>
-            description:{{card.description}}
-            </p>
-        </mat-card-content>
-    </mat-card>
+    <div class="col-mb-4" *ngFor="let card of cards">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{card.Title}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{card.image}}">
+            <mat-card-content>
+                <p>
+                    cost:{{card.cost}} <br>
+                    description:{{card.description}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>
-</div>    
-    

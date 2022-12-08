@@ -19,30 +19,12 @@
       "selected": false
     },
     {
-      "no": "12",
-      "cost": 1000,
-      "itemName": "lehenga",
-      "shippingAddress": "madurai",
-      "expectedDelivery": "12-12-22",
-      "id": "12",
-      "selected": false
-    },
-    {
       "no": "7",
       "itemName": "laptop",
       "cost": "50000",
       "shippingAddress": "chennai",
       "expectedDelivery": "25-11-2022",
       "id": "7",
-      "selected": true
-    },
-    {
-      "no": "55",
-      "cost": "100",
-      "itemName": "jfkf",
-      "shippingAddress": "jjbfk",
-      "expectedDelivery": "15-11-22",
-      "id": "55",
       "selected": true
     },
     {
@@ -53,6 +35,23 @@
       "expectedDelivery": "5-12-22",
       "id": "1",
       "selected": true
+    },
+    {
+      "no": "5",
+      "cost": "30000",
+      "itemName": "Tv",
+      "shippingAddress": "kerala",
+      "expectedDelivery": "10-12-22",
+      "id": "5",
+      "selected": true
+    },
+    {
+      "no": "12",
+      "itemName": "lehenga",
+      "cost": 1000,
+      "shippingAddress": "trichy",
+      "expectedDelivery": "12-12-22",
+      "id": "12"
     }
   ],
   "Shopping": [

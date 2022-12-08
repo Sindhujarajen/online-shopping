@@ -18,9 +18,9 @@ export class NewoneComponent {
   constructor(private service: SampleserviceService, private route: ActivatedRoute, private dialog:MatDialog) { }
   ngOnInit() {
     this.service.getItem(this.route.snapshot.params['id'])
-      .subscribe(a => {
-        console.log('--param--', a);
-        this.add=a
+      .subscribe(code => {
+        // console.log('--param--', a);
+        this.add=code
       })
    }
    edit(add:any) {
@@ -30,15 +30,15 @@ export class NewoneComponent {
           showButton:true
          }
         })
-    dialogRef.afterClosed().subscribe((x:any) => {
-      console.log('Dialog result', `${x}`);
+    dialogRef.afterClosed().subscribe((code:any) => {
+      // console.log('Dialog result', `${x}`);
 
     })
   }
   
   delete(id: any) {
-    this.service.deleteDetails(id).subscribe(x => {
-      console.log('-----', x);
+    this.service.deleteDetails(id).subscribe(code => {
+      // console.log('-----', x);
 
     })
   }
