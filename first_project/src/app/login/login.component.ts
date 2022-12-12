@@ -9,10 +9,10 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit,OnDestroy {
   details: any;
   formdata: any;
-  subscription$ = new Subject<boolean>
+  subscription$=new Subject<boolean> 
 
   constructor(private router: Router, private service: SampleserviceService) { }
   ngOnDestroy(): void {
@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     })
   }
+  
 }
 
 

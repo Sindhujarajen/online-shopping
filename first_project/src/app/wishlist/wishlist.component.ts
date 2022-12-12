@@ -17,6 +17,7 @@ export interface PeriodicElement {
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css']
 })
+
 export class WishlistComponent implements OnInit {
   displayedColumns: string[] = ['no', 'itemName', 'cost', 'shippingAddress', 'expectedDelivery'];
   dataSource: Observable<Details[]> = of([]);

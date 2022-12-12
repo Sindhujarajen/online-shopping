@@ -66,7 +66,7 @@ export class StepperComponent implements OnInit,OnDestroy {
   }
 
   form4() {
-    this.fourthFormGroup.value;
+    (this.fourthFormGroup.value);
     this.service.createDetails({ ...this.firstFormGroup.value, ...this.secondFormGroup.value, ...this.fourthFormGroup.value, id: this.firstFormGroup.value['no'] }).subscribe()
     this.dialog.closeAll()
   }
