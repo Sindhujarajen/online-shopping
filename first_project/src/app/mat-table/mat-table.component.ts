@@ -44,7 +44,6 @@ export class MatTableComponent implements OnInit,OnDestroy {
   deleteRow(id: any) {
     this.service.deleteDetails(id).pipe(takeUntil(this.onKill$)).subscribe()
   }
-
   favo(data: any) {
     this.service.updatefavo(data).pipe(takeUntil(this.onKill$)).subscribe(code => {
       window.location.reload()
