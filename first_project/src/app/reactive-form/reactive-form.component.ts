@@ -12,22 +12,23 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./reactive-form.component.css']
 })
 
-export class ReactiveFormComponent implements OnInit ,OnDestroy{
+export class ReactiveFormComponent implements OnInit, OnDestroy {
 
-  onValue$=new Subject<boolean>
+  onValue$ = new Subject<boolean>
   formdata: any;
- 
+
   constructor(public dialog: MatDialog, private service: SampleserviceService,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _snackBar: MatSnackBar) { }
+
   ngOnDestroy(): void {
     this.onValue$.next(true);
-      this.onValue$.complete();
+    this.onValue$.complete();
   }
 
-    
+
   ngOnInit(): void {
-    
+
 
     this.formdata = new FormGroup({
       no: new FormControl(this.data?.no ?? '', Validators.required),
@@ -45,7 +46,7 @@ export class ReactiveFormComponent implements OnInit ,OnDestroy{
 
       })
     this.dialog.closeAll();
-   }
+  }
 
   update(Details: any) {
     this.service.editDetails(Details).pipe(takeUntil(this.onValue$)).subscribe(code => {
@@ -60,7 +61,7 @@ export class ReactiveFormComponent implements OnInit ,OnDestroy{
   closeSnackbar() {
     this._snackBar.open('added successful', 'Thankyou 💐')
   }
-  
+
 }
 
 

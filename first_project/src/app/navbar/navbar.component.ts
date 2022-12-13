@@ -8,21 +8,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-
   constructor() { }
-  
-
 
   ngOnInit() { }
   edit() {
     this.updateEditDetails.emit(this.add)
   }
-  delete(){
+  delete() {
     this.updateDeleteDetails.emit(this.add)
   }
 
   @Input() add: any
-  @Output() updateEditDetails= new EventEmitter<any>();
+  @Output() updateEditDetails = new EventEmitter<any>();
   @Output() updateDeleteDetails = new EventEmitter<any>();
 
 }

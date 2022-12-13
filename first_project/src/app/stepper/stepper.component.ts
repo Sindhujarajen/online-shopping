@@ -20,14 +20,17 @@ export class StepperComponent implements OnInit,OnDestroy {
   firstFormGroup = this._formBuilder.group({
     no: ['', Validators.required],
   });
+
   secondFormGroup = this._formBuilder.group({
     cost: ['', Validators.required],
     itemName: ['', Validators.required],
     shippingAddress: ['', Validators.required]
   });
+
   fourthFormGroup = this._formBuilder.group({
     expectedDelivery: ['', Validators.required],
   });
+  
   thirdFormGroup: any
   country = new FormControl(null, Validators.required)
   state = new FormControl(null, Validators.required)
