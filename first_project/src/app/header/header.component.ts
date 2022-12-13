@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ReactiveFormComponent } from '../reactive-form/reactive-form.component';
+import { Subject, takeUntil } from 'rxjs';
 import { SampleserviceService } from '../sampleservice.service';
 import { StepperComponent } from '../stepper/stepper.component';
 @Component({
@@ -9,50 +9,49 @@ import { StepperComponent } from '../stepper/stepper.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent  implements OnInit{
-  a: any
+export class HeaderComponent implements OnInit, OnDestroy {
+  userName: any
   email: any;
-  fName:any
-  lName:any
+  fName: any
+  lName: any
+  onDestroy$ = new Subject<boolean>
 
- 
- // dataSource: any;
-  constructor(private dialog:MatDialog,private router:Router,private service:SampleserviceService) { }
-  ngOnInit(){
-    this.email=localStorage.getItem('email')
-    this.a=this.email.split('.').join(' ').split('@',1).join(' ')
-    this.fName= ((this.a.split(' ',1))[0])[0]
-    this.lName=((this.a.split(' ',2))[1])[0]
+  constructor(private dialog: MatDialog, private router: Router, private service: SampleserviceService) { }
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
-  
-  
-addDetails(){
-  const dialogRef=this.dialog.open(StepperComponent)
+  ngOnInit() {
+    this.email = localStorage.getItem('email')
+    this.userName = this.email.split('.').join(' ').split('@', 1).join(' ')
+    this.fName = ((this.userName.split(' ', 1))[0])[0]
+    this.lName = ((this.userName.split(' ', 2))[1])[0]
+  }
 
-  dialogRef.afterClosed().subscribe(result =>{
-    // console.log('Dialog result',`${result}`);
-    
-  })
+  addDetails() {
+    const dialogRef = this.dialog.open(StepperComponent)
 
-}
+    dialogRef.afterClosed().pipe(takeUntil(this.onDestroy$)).subscribe(result => {
 
-logout(){
-  this.router.navigate(['/login'])
-  localStorage.clear()
-}
-login(){
-  this.router.navigate(['/mat-table'])
-}
-goto(){
-  this.router.navigate(['/goshopping'])
-}
-wish(){
-  this.router.navigate(['/wishlist'])
-}
-searchTool(val:any){
-  // console.log('------',val);
-  this.service.searchItem(val)
-  
-}
+    })
 
+  }
+
+  logout() {
+    this.router.navigate(['/login'])
+    localStorage.clear()
+  }
+  login() {
+    this.router.navigate(['/mat-table'])
+  }
+  goto() {
+    this.router.navigate(['/goshopping'])
+  }
+  wish() {
+    this.router.navigate(['/wishlist'])
+  }
+  searchTool(val: any) {
+    this.service.searchItem(val)
+
+  }
 }

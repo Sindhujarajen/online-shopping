@@ -1,20 +1,4 @@
-/* .loosu{
-    display:flex;
-    background-color: aqua;
-    height: 90px;
-}
-.circle{
-    margin-left :750px;
-    height: 50px;
-    width: 50px;
-     border: solid;
-    border-radius: 50%;
-    background-color: darksalmon;
-   
-}
-.ok{
-    width: 250px;
-} */
+
 .row {
     display: inline-flex;
     align-items: center;

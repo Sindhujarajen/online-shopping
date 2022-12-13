@@ -8,6 +8,7 @@ export class HighlightDirective {
   @Input('color') color:any
 
   constructor(private element:ElementRef) { }
+  
   @HostListener('mouseover') over(){
     this.element.nativeElement.style.color='blue'
     this.element.nativeElement.style.color=this.color
@@ -15,6 +16,7 @@ export class HighlightDirective {
     // this.element.nativeElement.style['font-size']='medium'
     this.element.nativeElement.style['font-weight']='bold'
   }
+
   @HostListener('mouseleave') leave(){
     this.element.nativeElement.style.color=''
     this.element.nativeElement.style['font-weight']=''

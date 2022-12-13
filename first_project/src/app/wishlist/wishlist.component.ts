@@ -1,14 +1,13 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { filter, find, map, Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
+import { Details } from '../model';
 import { SampleserviceService } from '../sampleservice.service';
-
 
 
 export interface PeriodicElement {
   itemName: string;
-  no: number;
-  cost: Number;
+  no: string;
+  cost: string;
   shippingAddress: string;
   expectedDelivery: string;
 }
@@ -20,8 +19,7 @@ export interface PeriodicElement {
 })
 export class WishlistComponent implements OnInit {
   displayedColumns: string[] = ['no', 'itemName', 'cost', 'shippingAddress', 'expectedDelivery'];
-  dataSource: Observable<any> = of([{}]);
-  router: any;
+  dataSource: Observable<Details[]> = of([]);
 
   constructor(private service: SampleserviceService) { }
 
@@ -29,7 +27,6 @@ export class WishlistComponent implements OnInit {
     this.service.getDetails()
     this.dataSource = this.service.dataEvent$
       .pipe(map((code: any) => {
-        // console.log('===x====', x)
         return (code.filter((all: any) => all.selected))
       }))
   }

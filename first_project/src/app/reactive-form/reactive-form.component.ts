@@ -1,25 +1,33 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog'
 import { SampleserviceService } from '../sampleservice.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
-export class ReactiveFormComponent implements OnInit {
 
+export class ReactiveFormComponent implements OnInit ,OnDestroy{
 
+  onValue$=new Subject<boolean>
   formdata: any;
-  // private _snackBar: any;
+ 
   constructor(public dialog: MatDialog, private service: SampleserviceService,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _snackBar: MatSnackBar) { }
+  ngOnDestroy(): void {
+    this.onValue$.next(true);
+      this.onValue$.complete();
+  }
+
+    
   ngOnInit(): void {
-    //  console.log('--data--',this.data);
+    
 
     this.formdata = new FormGroup({
       no: new FormControl(this.data?.no ?? '', Validators.required),
@@ -31,31 +39,28 @@ export class ReactiveFormComponent implements OnInit {
   }
   submit(data: any) {
 
-    //  console.log('--submit--',data);
-
     this.service.createDetails(
-      { ...data, id: data['no'] }).subscribe(code => {
+      { ...data, id: data['no'] }).pipe(takeUntil(this.onValue$)).subscribe(code => {
         window.location.reload();
-        // console.log('----submit---',s);
 
       })
     this.dialog.closeAll();
-    // console.log('---',data);
+   }
 
-
-  }
   update(Details: any) {
-    this.service.editDetails(Details).subscribe(code => {
+    this.service.editDetails(Details).pipe(takeUntil(this.onValue$)).subscribe(code => {
       window.location.reload();
-      // console.log('----submit---',m);
     })
   }
+
   openSnackbar() {
     this._snackBar.open('updated successful', 'Thankyou💐')
   }
+
   closeSnackbar() {
     this._snackBar.open('added successful', 'Thankyou 💐')
   }
+  
 }
 
 

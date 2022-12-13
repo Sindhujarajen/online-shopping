@@ -1,17 +1,16 @@
 <div>
     <h3>Login Form</h3><br>
-        <form [formGroup]="formdata" (ngSubmit)="loginPage(formdata.value)">
-            <div> 
-                <mat-form-field appearance="fill"> 
-                    <mat-label for="username">email </mat-label><br>
-                    <input matInput type="text" formControlName="email"><br><br>
-                 </mat-form-field> <br>
-                <mat-form-field appearance="fill">
-                    <mat-label for="password">Password </mat-label><br>
-                    <input matInput type="password" formControlName="password"><br><br>
-                </mat-form-field>
-            </div>
-            <button mat-storke-button type="submit">submit</button>
-        </form>
+    <form [formGroup]="formdata" (ngSubmit)="loginPage(formdata.value)">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label for="username">email </mat-label><br>
+                <input matInput type="text" formControlName="email"><br><br>
+            </mat-form-field> <br>
+            <mat-form-field appearance="fill">
+                <mat-label for="password">Password </mat-label><br>
+                <input matInput type="password" formControlName="password"><br><br>
+            </mat-form-field>
+        </div>
+        <button mat-storke-button type="submit">submit</button>
+    </form>
 </div>
-

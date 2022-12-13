@@ -1,31 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { SampleserviceService } from '../sampleservice.service';
-import { MatFormField, MatFormFieldControl } from '@angular/material/form-field';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   details: any;
+  formdata: any;
+  subscription$ = new Subject<boolean>
 
-  formdata: any
   constructor(private router: Router, private service: SampleserviceService) { }
+  ngOnDestroy(): void {
+    this.subscription$.next(true);
+    this.subscription$.complete();
+  }
   ngOnInit(): void {
     this.formdata = new FormGroup({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     })
   }
-
+  
   loginPage(data: any) {
-    // console.log(',,,', data);
-
-    this.service.loginPage(data).subscribe((code: any) => {
+  
+    this.service.loginPage(data).pipe((takeUntil(this.subscription$))).subscribe((code: any) => {
 
       localStorage.setItem('loginsucessfully', 'true')
       localStorage.setItem('email', data.email)
@@ -35,4 +38,6 @@ export class LoginComponent implements OnInit {
     })
   }
 }
+
+
 

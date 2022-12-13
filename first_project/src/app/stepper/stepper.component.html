@@ -13,6 +13,7 @@
       </div>
     </form>
   </mat-step>
+  
   <mat-step [stepControl]="secondFormGroup" label="Fill out your itemName & Cost & Adress">
     <form [formGroup]="secondFormGroup" (ngSubmit)="form2()" #formtwo="ngForm">
       <mat-form-field appearance="fill">
@@ -20,19 +21,14 @@
         <input matInput formControlName="itemName" placeholder="itemName" required>
 
       </mat-form-field>
-      <!-- <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div> -->
-      <!-- </form>
-      </mat-step> -->
-
+      
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Cost</mat-label>
           <input matInput formControlName="cost" placeholder="cost" required>
         </mat-form-field>
       </div>
+
       <div>
         <mat-form-field appearance="fill">
           <mat-label>shippingAddress</mat-label>
@@ -43,12 +39,21 @@
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
-        <!-- <button type="submit" mat-button>submit</button> -->
       </div>
     </form>
   </mat-step>
+
   <mat-step [stepControl]="thirdFormGroup" label="Fill out your Country & State">
     <form [formGroup]="thirdFormGroup" (ngSubmit)="form3()" #formthree="ngForm">
+      
+        <mat-form-field appearance="fill">
+          <mat-label>country</mat-label>
+          <mat-select [formControl]="country" name="country">
+            <mat-option *ngFor="let country of countries" [value]="country">
+              {{country.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
 
       <mat-form-field appearance="fill">
         <mat-label>country</mat-label>
@@ -57,7 +62,6 @@
             {{country.name}}
           </mat-option>
         </mat-select>
-        <!-- <input matInput formControlName="fourthCtrl" placeholder="shippingAddress" required> -->
       </mat-form-field><br>
 
       <mat-form-field appearance="fill">
@@ -87,7 +91,6 @@
       <div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
-        <!-- <button type="submit" mat-button>submit</button> -->
       </div>
     </form>
   </mat-step>

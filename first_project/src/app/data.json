@@ -3,7 +3,7 @@
     {
       "no": "10",
       "itemName": "phone",
-      "cost": 50000,
+      "cost": "50000",
       "shippingAddress": "SR Layout",
       "expectedDelivery": "22-11-2022",
       "id": "10",
@@ -11,11 +11,20 @@
     },
     {
       "no": "11",
-      "cost": 30,
+      "cost": "30",
       "itemName": "soap",
       "shippingAddress": "madurai",
       "expectedDelivery": "15-11-22",
       "id": "11",
+      "selected": false
+    },
+    {
+      "no": "12",
+      "cost": "1000",
+      "itemName": "lehenga",
+      "shippingAddress": "madurai",
+      "expectedDelivery": "12-12-22",
+      "id": "12",
       "selected": false
     },
     {
@@ -57,39 +66,104 @@
   "Shopping": [
     {
       "Title": "shoes",
-      "cost": 2000,
+      "cost": "2000",
       "image": "https://th.bing.com/th/id/OIP.vfvjT0FAy5jcqBaNtAhNhAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
       "description": "White Tennies"
     },
     {
       "Title": "jeans",
-      "cost": 1000,
+      "cost": "1000",
       "image": "https://th.bing.com/th/id/OIP.QUKgKWR8N8TEzXZDIHpg0QHaLH?w=195&h=292&c=7&r=0&o=5&dpr=1.5&pid=1.7",
       "description": "Women super high raise skinny jeans"
     },
     {
       "Title": "lehenga",
-      "cost": 10000,
+      "cost": "10000",
       "image": "https://th.bing.com/th/id/OIP.RLBLWyahJwUvtWYPsZj32AHaKt?w=195&h=283&c=7&r=0&o=5&dpr=1.5&pid=1.7",
       "description": "perfume etiquette"
     },
     {
       "Title": "perfume",
-      "cost": 999,
+      "cost": "999",
       "image": "https://th.bing.com/th/id/OIP.vfvjT0FAy5jcqBaNtAhNhAHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
       "description": "perfume etiquette"
     },
     {
       "Title": "watch",
-      "cost": 3000,
+      "cost": "3000",
       "image": "https://th.bing.com/th/id/OIP.lHfNQ4X4wti5VM-W0jtiawHaE7?w=301&h=200&c=7&r=0&o=5&dpr=1.5&pid=1.7 ",
       "description": "Rolex Day Date 40MM Ref & secret"
     },
     {
       "Title": "T-Shirt",
-      "cost": 300,
+      "cost": "300",
       "image": "https://th.bing.com/th/id/OIP.DSjZPk9uy01_f2ox4Q5QPgHaHa?w=217&h=218&c=7&r=0&o=5&dpr=1.5&pid=1.7 ",
       "description": "Nike Logo T-shirt in Black"
     }
-  ]
+  ],
+"Clothes":[
+  {"Title": "jeans",
+  "cost": "1000",
+  "image": "https://th.bing.com/th/id/OIP._QpfmGYQjMY4ROk2iA_4vgHaJ4?w=195&h=260&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+  "description": "Women super high raise skinny jeans"
+},
+  {
+    "Title": "lehenga",
+    "cost": "10000",
+    "image": "https://th.bing.com/th/id/OIP.RLBLWyahJwUvtWYPsZj32AHaKt?w=195&h=283&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "description": "perfume etiquette"
+  },
+  {
+    "Title": "T-Shirt",
+    "cost": "300",
+    "image": "https://th.bing.com/th/id/OIP.DSjZPk9uy01_f2ox4Q5QPgHaHa?w=217&h=218&c=7&r=0&o=5&dpr=1.5&pid=1.7 ",
+    "description": "Nike Logo T-shirt in Black"
+  }
+],
+"Cosmetic":[
+  {
+    "Title":"Lipstick",
+    "cost":"500",
+    "image":"https://th.bing.com/th?id=OPA.Ms3oJZjsJ4MRSQ474C474&w=272&h=380&o=5&pid=21.1",
+    "description":"M.A.C Amplified lipstick - full"
+  },
+  {
+    "Title":"Compact powder",
+    "cost":"2000",
+    "image":"https://th.bing.com/th?id=OPA.fT0uFUqTW7%2bJCw474C474&w=272&h=272&o=5&dpr=1.5&pid=21.1",
+    "description":"Coloressence Compact Powder"
+  },
+  {
+    "Title":"Fach Wash",
+    "cost":"750",
+    "image":"https://th.bing.com/th?id=OPA.0mmaxZE9RwOBRQ474C474&w=200&h=220&dpr=1.5&pid=21.1",
+    "description":"Mamaearth Skin Lightening and Brightening Combo"
+  }
+],
+"Grocery":[
+  {
+    "Title":"nutella",
+    "cost":"704",
+    "image":"https://th.bing.com/th?id=OPA.TiqdMhjyzVPBRQ474C474&w=592&h=550&o=5&dpr=1.5&pid=21.1",
+    "description":"Make your breakfast interesting with Nutella- hazelnut spread with cocoa"
+  },
+  {
+    "Title":"vegetable",
+    "cost":"500",
+    "image":"https://th.bing.com/th/id/OIP.kju_f3KpDMQNBm1ZZYFtiQHaHa?w=146&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "description":"Vegetables are parts of plants that are consumed by humans as food. "
+  },
+  {
+    "Title":"Flour",
+    "cost":"100",
+    "image":"https://th.bing.com/th/id/OIP.AC0t-wBd5uvngDv633smLQHaHa?w=178&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "description":"Flour is a powder made by grinding raw grains, roots, beans, nuts, or seeds."
+  },
+  {
+    "Title":"spices",
+    "cost":"500",
+    "image":"https://th.bing.com/th/id/OIP.0RvfcoEZX4ZEYu1qgfnqfgHaE8?w=236&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
+    "description":"Spices are aromatic flavorings from seeds, fruits and other plant parts."
+  }
+]
 }

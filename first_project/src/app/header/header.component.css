@@ -1,7 +1,3 @@
-/* h3{
-    background-color: cornflowerblue;
-    height: 50px;
-} */
 div{
     display: flex;
  
@@ -9,17 +5,14 @@ div{
 
 }
 #ss{
-    /* margin-bottom: 500px; */
     margin-left: 60px;
-    /* font-size: medium; */
-     background-image: linear-gradient(to right,rgba(212, 234, 13, 0.911), rgb(225, 19, 98) , yellow); 
-    /* background-image: conic-gradient(red, yellow, rgb(40, 232, 23),yellow); */
+    background-image: linear-gradient(to right,rgba(212, 234, 13, 0.911), rgb(225, 19, 98) , yellow); 
 }
 .circle{
     margin-left :350px;
     height: 50px;
     width: 50px;
-     border: solid;
+    border: solid;
     border-radius: 50%;
     background-color: darksalmon;
 }
@@ -31,12 +24,3 @@ div{
     height:30px;
    
 }
-/* .search{
-      width: 100px;
-      margin-left: 100px;
-} */
-
-/* .example-full-width{ 
-    height: 80px;
-    margin-left:100px ;
-}  */
