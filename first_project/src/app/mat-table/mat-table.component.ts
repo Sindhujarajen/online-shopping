@@ -12,8 +12,7 @@ import { Details } from '../model';
   styleUrls: ['./mat-table.component.css']
 })
 export class MatTableComponent implements OnInit,OnDestroy {
-  [x: string]: any;
- 
+
   onKill$=new Subject<boolean>
 
   displayedColumns: string[] = ['no', 'itemName', 'cost', 'shippingAddress', 'expectedDelivery', 'star', 'selected'];
