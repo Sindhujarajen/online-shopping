@@ -15,10 +15,18 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'new/:id',component:NewoneComponent},
-  // {path:'mat-table',component:MatTableComponent},
   {path:'mat-table',canActivate:[Guard],component:MatTableComponent},
-   {path :'login',component:LoginComponent},
-  {path:'goshopping',canActivate:[Guard],component:GoshoppingComponent},
+  {path :'login',component:LoginComponent},
+
+  {path:'goshopping',canActivate:[Guard],component:GoshoppingComponent,
+  children: [
+  {path:'Clothes',canActivate:[Guard],component:GoshoppingComponent},
+
+  {path:'Cosmetic',canActivate:[Guard],component:GoshoppingComponent},
+
+  {path:'Grocery',canActivate:[Guard],component:GoshoppingComponent}
+]},
+
   {path:'wishlist',canActivate:[Guard],component:WishlistComponent}
   
 ];

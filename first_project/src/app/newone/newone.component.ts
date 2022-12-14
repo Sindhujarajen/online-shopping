@@ -1,8 +1,8 @@
 import { DataSource } from '@angular/cdk/collections';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { observable } from 'rxjs';
+import { observable, Subject, takeUntil } from 'rxjs';
 import { ReactiveFormComponent } from '../reactive-form/reactive-form.component';
 import { SampleserviceService } from '../sampleservice.service';
 
@@ -11,18 +11,22 @@ import { SampleserviceService } from '../sampleservice.service';
   templateUrl: './newone.component.html',
   styleUrls: ['./newone.component.css']
 })
-export class NewoneComponent {
+export class NewoneComponent implements OnInit,OnDestroy {
   add:any
-  
-  // [x: string]: Object;
+  value$=new Subject<boolean>
+ 
   constructor(private service: SampleserviceService, private route: ActivatedRoute, private dialog:MatDialog) { }
+  
+  ngOnDestroy(): void {
+    this.value$.next(true);
+    this.value$.complete();
+  }
+  
   ngOnInit() {
-    this.service.getItem(this.route.snapshot.params['id'])
-      .subscribe(code => {
-        // console.log('--param--', a);
-        this.add=code
-      })
-   }
+    this.service.getItem(this.route.snapshot.params['id']).pipe(takeUntil(this.value$))
+      .subscribe()
+    }
+    
    edit(add:any) {
     const dialogRef = this.dialog.open(ReactiveFormComponent, {
          data:{
@@ -30,18 +34,14 @@ export class NewoneComponent {
           showButton:true
          }
         })
-    dialogRef.afterClosed().subscribe((code:any) => {
-      // console.log('Dialog result', `${x}`);
-
-    })
+    dialogRef.afterClosed().pipe(takeUntil(this.value$)).subscribe()
+    
   }
   
   delete(id: any) {
-    this.service.deleteDetails(id).subscribe(code => {
-      // console.log('-----', x);
-
-    })
+    this.service.deleteDetails(id).pipe(takeUntil(this.value$)).subscribe()
   }
+  
    
 }
 

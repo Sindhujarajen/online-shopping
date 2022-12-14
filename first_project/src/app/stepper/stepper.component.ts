@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Country, State, City } from 'country-state-city';
+import { Subject, takeUntil } from 'rxjs';
 import { SampleserviceService } from '../sampleservice.service'
 
 @Component({
@@ -9,11 +10,13 @@ import { SampleserviceService } from '../sampleservice.service'
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.css']
 })
-export class StepperComponent implements OnInit {
-  // service: any;
-  // dialog: any;
+
+export class StepperComponent implements OnInit,OnDestroy {
+  
+  dialog$=new Subject<boolean>
   Country: any;
   states: any;
+
   firstFormGroup = this._formBuilder.group({
     no: ['', Validators.required],
   });
@@ -31,40 +34,41 @@ export class StepperComponent implements OnInit {
   countries: any
 
   constructor(private _formBuilder: FormBuilder, private service: SampleserviceService, public dialog: MatDialog) { }
+  ngOnDestroy(): void {
+    this.dialog$.next(true);
+    this.dialog$.complete();
+  }
 
 
   ngOnInit(): void {
     this.countries = Country.getAllCountries()
-    // console.log(Country.getAllCountries())
+   
     this.thirdFormGroup = new FormGroup({
       Country: this.country,
       State: this.state
     })
 
-    this.country.valueChanges.subscribe((code: any) => {
+    this.country.valueChanges.pipe(takeUntil(this.dialog$)).subscribe((code: any) => {
       this.states = State.getStatesOfCountry(code.isoCode)
-      //  console.log('----',d);
-      //  console.log('---',this.states);
     })
   }
+
   form1() {
-    (this.firstFormGroup.value);
+    this.firstFormGroup.value;
   }
 
   form2() {
-    (this.secondFormGroup.value);
+    this.secondFormGroup.value;
   }
 
   form3() {
-    (this.thirdFormGroup.value);
+    this.thirdFormGroup.value;
   }
 
   form4() {
-    (this.fourthFormGroup.value);
-    this.service.createDetails({ ...this.firstFormGroup.value, ...this.secondFormGroup.value, ...this.fourthFormGroup.value, id: this.firstFormGroup.value['no'] }).subscribe(n => {
-      // console.log('----',n);
-
-    })
+    this.fourthFormGroup.value;
+    this.service.createDetails({ ...this.firstFormGroup.value, ...this.secondFormGroup.value, ...this.fourthFormGroup.value, id: this.firstFormGroup.value['no'] }).subscribe()
     this.dialog.closeAll()
   }
+  
 }
