@@ -19,7 +19,6 @@ import {MatCardModule} from '@angular/material/card';
 import { NewoneComponent } from './newone/newone.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
-// import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -33,8 +32,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { GoshoppingComponent } from './goshopping/goshopping.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import {MatListModule} from '@angular/material/list';
-import {HighlightDirective } from './highlight.directive';
-import {MatExpansionModule} from '@angular/material/expansion'
+import { HighlightDirective } from './highlight.directive';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -62,7 +61,6 @@ import {MatExpansionModule} from '@angular/material/expansion'
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
-    // MatToolbarModule
     MatSidenavModule,
     MatFormFieldModule,
     MatInputModule,

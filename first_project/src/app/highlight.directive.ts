@@ -13,7 +13,6 @@ export class HighlightDirective {
     this.element.nativeElement.style.color='blue'
     this.element.nativeElement.style.color=this.color
     this.element.nativeElement.style.background=this.background
-    // this.element.nativeElement.style['font-size']='medium'
     this.element.nativeElement.style['font-weight']='bold'
   }
 
